@@ -17,4 +17,5 @@ func init() {
 		Short: "Project Forking Tool for GitHub",
 	}
 	rootCmd.AddCommand(pork.SearchCmd)
+	rootCmd.AddCommand(pork.DocsCmd)
 }
