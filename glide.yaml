@@ -1,0 +1,4 @@
+package: github.com/mspaulding06/pork
+import:
+- package: github.com/spf13/cobra
+- package: github.com/mspaulding06/nap
