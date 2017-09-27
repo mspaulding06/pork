@@ -19,4 +19,5 @@ func init() {
 	rootCmd.AddCommand(pork.SearchCmd)
 	rootCmd.AddCommand(pork.DocsCmd)
 	rootCmd.AddCommand(pork.CloneCmd)
+	rootCmd.AddCommand(pork.ForkCmd)
 }
