@@ -2,3 +2,6 @@ package: github.com/mspaulding06/pork
 import:
 - package: github.com/spf13/cobra
 - package: github.com/mspaulding06/nap
+- package: gopkg.in/src-d/go-git.v4
+- package: github.com/spf13/viper
+  version: ^1.0.0
