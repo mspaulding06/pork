@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/mspaulding06/pork"
@@ -26,5 +27,8 @@ func init() {
 	viper.SetDefault("location", os.Getenv("HOME"))
 	viper.SetConfigName("pork")
 	viper.AddConfigPath(".")
-	viper.ReadInConfig()
+	if err := viper.ReadInConfig(); err != nil {
+		fmt.Println("No configuration file found")
+	}
+	viper.SetDefault("location", os.Getenv("HOME"))
 }
