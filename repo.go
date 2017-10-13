@@ -2,6 +2,7 @@ package pork
 
 import (
 	"fmt"
+	"os"
 	"path/filepath"
 	"strings"
 
@@ -35,7 +36,8 @@ func (g *GHRepo) RepositoryURL() string {
 func (g *GHRepo) Clone(dest string) error {
 	fullPath := filepath.Join(dest, fmt.Sprintf("%s-%s", g.owner, g.project))
 	repo, err := git.PlainClone(fullPath, false, &git.CloneOptions{
-		URL: g.RepositoryURL(),
+		URL:      g.RepositoryURL(),
+		Progress: os.Stdout,
 	})
 	if err != nil {
 		return err

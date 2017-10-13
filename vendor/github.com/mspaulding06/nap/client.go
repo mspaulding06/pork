@@ -35,8 +35,5 @@ func (c *Client) ProcessRequest(baseURL string, res *RestResource, params map[st
 	if err != nil {
 		return err
 	}
-	if err := res.Router.CallFunc(resp, nil); err != nil {
-		return err
-	}
-	return nil
+	return res.Router.CallFunc(resp)
 }

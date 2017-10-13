@@ -31,7 +31,7 @@ func main() {
 
 func init() {
 	router := nap.NewRouter()
-	router.RegisterFunc(200, func(resp *http.Response, _ interface{}) error {
+	router.RegisterFunc(200, func(resp *http.Response) error {
 		defer resp.Body.Close()
 		content, err := ioutil.ReadAll(resp.Body)
 		if err != nil {

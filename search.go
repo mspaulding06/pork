@@ -24,7 +24,7 @@ var SearchCmd = &cobra.Command{
 	Use:   "search",
 	Short: "search for GitHub repositories by keyword",
 	Run: func(cmd *cobra.Command, args []string) {
-		if err := SearchByKeyword; err != nil {
+		if err := SearchByKeyword(args); err != nil {
 			log.Fatalln("Search Failed:", err)
 		}
 	},
