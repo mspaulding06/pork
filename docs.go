@@ -36,7 +36,7 @@ func GetRepositoryReadme(repository string) error {
 	return GitHubAPI().Call("docs", map[string]string{
 		"owner":   values[0],
 		"project": values[1],
-	})
+	}, nil)
 }
 
 func ReadmeSuccess(resp *http.Response) error {

@@ -15,6 +15,7 @@ func GitHubAPI() *nap.API {
 		api.AddResource("fork", GetForkResource())
 		api.AddResource("search", GetSearchResource())
 		api.AddResource("docs", GetReadmeResource())
+		api.AddResource("pullrequest", GetPullRequestResource())
 	}
 	return api
 }

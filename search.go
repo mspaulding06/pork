@@ -33,7 +33,7 @@ var SearchCmd = &cobra.Command{
 func SearchByKeyword(keywords []string) error {
 	return GitHubAPI().Call("search", map[string]string{
 		"query": strings.Join(keywords, "+"),
-	})
+	}, nil)
 }
 
 func SearchSuccess(resp *http.Response) error {

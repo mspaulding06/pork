@@ -26,12 +26,12 @@ func (api *API) AddResource(name string, res *RestResource) {
 	api.Resources[name] = res
 }
 
-func (api *API) Call(name string, params map[string]string) error {
+func (api *API) Call(name string, params map[string]string, payload interface{}) error {
 	res, ok := api.Resources[name]
 	if !ok {
 		return fmt.Errorf("Resource does not exist: %s", name)
 	}
-	if err := api.Client.ProcessRequest(api.BaseURL, res, params); err != nil {
+	if err := api.Client.ProcessRequest(api.BaseURL, res, params, payload); err != nil {
 		return err
 	}
 	return nil

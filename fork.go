@@ -38,7 +38,7 @@ func ForkRepository(repository string) error {
 	return GitHubAPI().Call("fork", map[string]string{
 		"owner": values[0],
 		"repo":  values[1],
-	})
+	}, nil)
 }
 
 func ForkSuccess(resp *http.Response) error {
