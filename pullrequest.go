@@ -76,7 +76,7 @@ func PullRequestSuccess(resp *http.Response) error {
 	}
 	respContent := PullRequestResponse{}
 	json.Unmarshal(content, &respContent)
-	fmt.Printf("Created Pull Request: %s", respContent.URL)
+	fmt.Printf("Created Pull Request: %s\n", respContent.URL)
 	return nil
 }
 
