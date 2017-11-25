@@ -28,6 +28,7 @@ func init() {
 	viper.SetDefault("location", os.Getenv("HOME"))
 	viper.SetConfigName("pork")
 	viper.AddConfigPath(".")
+	viper.AddConfigPath(os.Getenv("HOME"))
 	if err := viper.ReadInConfig(); err != nil {
 		fmt.Println("No configuration file found")
 	}
